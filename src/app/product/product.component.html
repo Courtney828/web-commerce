@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>e-commerce</title>
+</head>
+
+<body>
+  <div class="container">
+  
+
+    <h2>Products</h2>
+    <a mat-raised-button routerLink="/add-product">Add Product</a>
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor="let product of prod_List ">
+
+        <div class="card" style="width: 18rem;">
+          <img src={{product.picture}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4>{{product.name}}</h4>
+            <span>  {{product.price}}</span>
+            <div style="float: right;">
+              <a mat-raised-button (click)="ViewProduct(product)">more info</a>
+            </div>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</body>
+
+</html>

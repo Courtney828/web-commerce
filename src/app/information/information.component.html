@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>e-commerce</title>
+</head>
+
+<body>
+    <div>
+        <h2>More Information</h2>
+        <div class="container" style="border-style: groove">
+            <mat-grid-list cols="2">
+                <mat-grid-tile>
+                    <div class="card">
+                        <img src={{product.picture}} class="card-img-top" alt="...">
+                            
+                        <button type="button"  routerLink="/more-info/update"class="btn btn-info"
+                            style="margin-top: 30px;" (click)="ViewProduct(product)" >Update</button>
+                            
+                        <button type="button" routerLink=""  class="btn btn-danger"
+                            style="margin-top: 20px;" (click)="onclick(product.id)">Delete</button>
+                         
+                    </div>
+
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <form>
+                        <h2>DESCRIPTION</h2>
+                        <span>{{product.description}}</span>
+                        <p style="margin-bottom: 20px;">Name : <b>{{product.name}}</b></p>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">QUANTITY</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">SIZE</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>UK3</option>
+                                <option>UK4</option>
+                                <option>UK5</option>
+                                <option>UK6</option>
+                                <option>UK7</option>
+                            </select>
+                        </div>
+                        <button routerLink="" type="submit" class="btn btn-warning"><i
+                                class="material-icons">add_shopping_cart</i></button>
+                    </form>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+</body>
+
+</html>
