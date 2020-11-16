@@ -85,6 +85,21 @@ resetPassword(email: string) {
     
   });
 }
+getCurrentUser(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    
+      var userId = user.uid;
+      console.log(userId);
+      return firebase.database().ref('/users/' + userId).once('value').then((snapshot) =>{
+        console.log(snapshot);
+        
+      });
+    } else {
+      // No user is signed in.
+    }
+  });
+}
 
 }
 

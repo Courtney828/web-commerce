@@ -21,10 +21,10 @@ export class LoginComponent implements OnInit {
    }
   ngOnInit(): void {
   }
-login(){
-  console.log(this.contactForm.value.email);
-    this.authService.signInUser(this.contactForm.value.email, this.contactForm.value.password)
-    this.router.navigate(['login']);
+login(email,password){
+
+  this.authService.signInUser(this.contactForm.value.email, this.contactForm.value.password)
+  this.router.navigate(['']);
   }
 
 }
