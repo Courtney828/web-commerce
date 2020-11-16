@@ -134,18 +134,15 @@ export class ProductService {
 
 
   updateProduct(id: number,prod:Product){
-    ;
-    this.db.doc('product/' + id).update(prod);
-
+    console.log(id)
+    return this.db.doc("product/" + id).update(prod)
   }
   deleteProduct(id: number){
     this.db.doc('product/' + id).delete()
 
   }
+ 
   
-
-
-    }
+}
   
-
 

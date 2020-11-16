@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class UpdateComponent implements OnInit {
 
   public contactForm: FormGroup;
+
+  selectProduct :any;
   product
   constructor(private _formBuilder: FormBuilder, private prod: ProductService, private router: Router) {
     this.router.getCurrentNavigation().extras.state
@@ -27,7 +29,8 @@ export class UpdateComponent implements OnInit {
     });
   }
   onSubmit(){
-    this.prod.updateProduct(this.contactForm.value);
+    this.prod.updateProduct(this.selectProduct.id,this.contactForm.value);
+    this.router.navigate([]);
   }
 
 }

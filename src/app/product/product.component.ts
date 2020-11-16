@@ -14,7 +14,7 @@ import { Product } from '../product';
 })
 export class ProductComponent implements OnInit {
 
-  prod_List: Observable<any[]>
+  prod_List:Product []=[]
   constructor(private prod: ProductService, private router: Router, private db:AngularFirestore) { }
 
   ngOnInit(): void {
@@ -40,9 +40,8 @@ export class ProductComponent implements OnInit {
     })
   }
 
-
   ViewProduct(product) {
     this.router.navigateByUrl('/product', { state: product });
   }
-
+ 
 }

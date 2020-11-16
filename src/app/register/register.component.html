@@ -8,29 +8,29 @@
       <div class="card" style="margin-top: 150px">
       <h4 class="card-header">Register</h4>
         <div class="card-body">
-            <form >
+            <form [formGroup]="contactForm" >
                 <div class="form-group" >
                     <label for="firstName">First Name</label>
-                    <input type="text" formControlName="firstName" class="form-control"  />
+                    <input matInput  type="text" formControlName="firstName" class="form-control"  />
                     
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" formControlName="lastName" class="form-control" />
+                    <input matInput type="text" formControlName="lastName" class="form-control" />
                     
                 </div>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" formControlName="username" class="form-control"  />
+                    <input matInput type="email" formControlName="email" class="form-control"  />
                     
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" formControlName="password" class="form-control" />
+                    <input matInput type="password" formControlName="password" class="form-control" />
                     
                 </div>
                 <div class="form-group">
-                    <button  routerLink="" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary" (click)="signUp()">Register</button>
                     <a routerLink="/login" class="btn btn-link">Cancel</a>
                 </div>
             </form>

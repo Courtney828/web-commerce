@@ -27,12 +27,13 @@ export class InformationComponent implements OnInit {
     this.prod.deleteProduct(id)
   }
 
-  update(id){
-    this.prod.updateProduct(id);
-  }
+  // update(id){
+  //   this.prod.updateProduct(id);
+  // }
   ViewProduct(product){
     this.router.navigateByUrl('/more-info/update', { state: product});
   }
+  // local
   // updateDialog(id: number) {
   //   // let dialogRef = this.dialog.open(UpdateDialogComponent);
   //   const Product = this.prod.getAllProduct().find(c => c.id === id);
