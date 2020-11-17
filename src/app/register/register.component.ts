@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  user:User
+  currentUser
   public contactForm: FormGroup;
 
   constructor(public authService: AuthService, private route: Router,private _formBuilder: FormBuilder) { }
@@ -23,6 +24,8 @@ export class RegisterComponent implements OnInit {
       lastName: "",
       email: "",
       password: ""
+    
+
     });
   }
 
@@ -32,6 +35,7 @@ export class RegisterComponent implements OnInit {
     // this.user = new User(this.firstName, this.lastName, this.email, this.password);
     this.authService.signUpUser(this.contactForm.value);
     this.route.navigate(['']);
+    this.authService.getCurrentUser()
   }
 }
 

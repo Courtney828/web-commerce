@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from  "@angular/router";
 import  firebase from 'firebase';
+import { User } from '../user';
 
 
 
@@ -13,6 +14,7 @@ export class AuthService {
   afAuth: any;
 
   user:any;
+  userInfo:User 
   constructor(private db :AngularFirestore) { }
 
 
@@ -25,16 +27,26 @@ export class AuthService {
       var errorMessage = error.message;
       message = errorMessage
       console.log(errorMessage);
+
     }).then( results =>{
-      user = results
-      if(user){
-        console.log("successfully Registered");
+      console.log(results);
+      if(results){
+        message = "successfully registered"
+        firebase.database().ref('users/' + results.user.uid).set({
+          firstName: user.firstName,
+          email: user.email,
+          lastName:user.lastName,
+          password:user.password
+          
+        });
+        console.log(message);
+      
       }else{
-        console.log(message)
+       
       }
-    
       
     });
+    
   }
 signInUser(email,password){
   let user :any
@@ -86,19 +98,23 @@ resetPassword(email: string) {
   });
 }
 getCurrentUser(){
-  firebase.auth().onAuthStateChanged(function(user) {
+   
+  firebase.auth().onAuthStateChanged((user) =>{
     if (user) {
-    
       var userId = user.uid;
-      console.log(userId);
-      return firebase.database().ref('/users/' + userId).once('value').then((snapshot) =>{
-        console.log(snapshot);
-        
-      });
+     firebase.database().ref('/users/' + userId).once('value').then( userProfile =>{
+        this.userInfo = new User (userProfile.val().firstName, userProfile.val().lastName, userProfile.val().email)
+        console.log(this.userInfo);
+        // return userInfo
+      })
     } else {
-      // No user is signed in.
+      console.log("user not logged in");
+      
     }
   });
+
+  
+  
 }
 
 }
