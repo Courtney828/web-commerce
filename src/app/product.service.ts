@@ -10,49 +10,49 @@ export class ProductService {
   constructor(private db: AngularFirestore) { }
 
  
-  productLists: Product[] = [
-    {
+  // productLists: Product[] = [
+  //   {
       
-      name: "Nike",
-      price: "R500",
-      description: "Just Do It",
-      picture:
-        "https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-    },
-    {
+  //     name: "Nike",
+  //     price: "R500",
+  //     description: "Just Do It",
+  //     picture:
+  //       "https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  //   },
+  //   {
       
-      name: "Puma",
-      price: "R600",
-      description: "we are Forever Faster",
-      picture:
-        "https://images.pexels.com/photos/2016145/pexels-photo-2016145.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-    },
-    {
+  //     name: "Puma",
+  //     price: "R600",
+  //     description: "we are Forever Faster",
+  //     picture:
+  //       "https://images.pexels.com/photos/2016145/pexels-photo-2016145.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  //   },
+  //   {
       
-      name: "Adidas",
-      price: "R800",
-      description: "Adidas is all in",
-      picture:
-        "https://images.pexels.com/photos/1619652/pexels-photo-1619652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-    },
-    {
+  //     name: "Adidas",
+  //     price: "R800",
+  //     description: "Adidas is all in",
+  //     picture:
+  //       "https://images.pexels.com/photos/1619652/pexels-photo-1619652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  //   },
+  //   {
       
-      name: "Rebook",
-      price: "R300",
-      description: "I am what I am",
-      picture:
-        "https://images.unsplash.com/photo-1580977251946-c5f692a4db0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-    },
-    {
+  //     name: "Rebook",
+  //     price: "R300",
+  //     description: "I am what I am",
+  //     picture:
+  //       "https://images.unsplash.com/photo-1580977251946-c5f692a4db0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  //   },
+  //   {
       
-      name: "puma",
-      price: "R300",
-      description: "we are Forever Faster",
-      picture:
-        "https://images.unsplash.com/photo-1571736772567-3aa763ff559a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-    }
+  //     name: "puma",
+  //     price: "R300",
+  //     description: "we are Forever Faster",
+  //     picture:
+  //       "https://images.unsplash.com/photo-1571736772567-3aa763ff559a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  //   }
 
-  ];
+  // ];
   // local
   // getAllProduct() {
   //   return this.productLists;
@@ -143,6 +143,7 @@ export class ProductService {
   }
  
   
+
 }
   
 
