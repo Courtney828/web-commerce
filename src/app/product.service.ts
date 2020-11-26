@@ -7,6 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore'
 })
 export class ProductService {
 
+  cart: any
   constructor(private db: AngularFirestore) { }
 
  
@@ -106,7 +107,9 @@ export class ProductService {
   // }
 
   getAllProduct() {
-    return this.db.collection("product").snapshotChanges()  
+    this.cart = this.db.collection("product").snapshotChanges()
+    return this.cart;  
+
   }
 
   // firebase
@@ -130,7 +133,6 @@ export class ProductService {
         console.error("Error writing document: ", error);
       });
   }
-  
 
 
   updateProduct(id: number,prod:Product){

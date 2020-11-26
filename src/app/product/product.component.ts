@@ -14,8 +14,8 @@ import { Product } from '../product';
 })
 export class ProductComponent implements OnInit {
 
-  prod_List:Product []=[]
-  constructor(private prod: ProductService, private router: Router, private db:AngularFirestore) { }
+  prod_List: Product[] = []
+  constructor(private prod: ProductService, private router: Router, private db: AngularFirestore) { }
 
   ngOnInit(): void {
     this.getproductLists()
@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
       this.prod_List = res.map((product) => {
         return {
           ...product.payload.doc.data(),
-          id:product.payload.doc.id
+          id: product.payload.doc.id
 
         } as Product
       })
@@ -43,5 +43,5 @@ export class ProductComponent implements OnInit {
   ViewProduct(product) {
     this.router.navigateByUrl('/product', { state: product });
   }
- 
+
 }
